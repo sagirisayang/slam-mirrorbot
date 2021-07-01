@@ -1,11 +1,10 @@
+TOKEN_PICKLE_URL=1
+ACCOUNTS_ZIP_URL=2
+
 if [[ -n $TOKEN_PICKLE_URL ]]; then
-	wget -q $TOKEN_PICKLE_URL -O /usr/src/app/token.pickle
+	echo "token"
 fi
 
 if [[ -n $ACCOUNTS_ZIP_URL ]]; then
-	wget -q $ACCOUNTS_ZIP_URL -O /usr/src/app/accounts.zip
-	unzip accounts.zip -d /usr/src/app/accounts
-	rm accounts.zip
+	echo "accounts"
 fi
-
-./aria.sh; python3 -m bot
